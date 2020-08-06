@@ -1,0 +1,30 @@
+
+<h1>Results</h1> 
+<a routerLink="admissions">admissions</a>
+ <br>
+<br>
+ <div class=" ">
+    <table id="results">
+        <tr> 
+            <th class="head" colspan="4" scope="colgroup">Students​ ​Result​ ​Board </th> 
+          </tr>
+        <tr>
+          <th>Student​ Name </th>
+          <th>Roll Number</th>
+          <th>Total Marks</th>
+          <th>Status</th>
+        </tr>
+        <tr *ngFor="let student of data " 
+        [ngStyle]="{
+        'color': (highest == student.total ) ? 'green': (student.fail ) ? 'red' : 'black'   }">
+          <td> {{student.name | titlecase}} </td>
+          <td> {{student.rollNumber}} </td>
+          <td> {{student.total}} </td>
+          <td *ngIf="highest == student.total  else no">Topper</td>
+            <ng-template #no>
+                <td *ngIf="student.fail ">Fail</td>
+                <td *ngIf="!student.fail ">Pass</td>
+            </ng-template>
+        </tr>
+    </table>
+ </div>

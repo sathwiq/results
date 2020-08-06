@@ -1,0 +1,10 @@
+.submit{
+    color: black;  
+}
+h1{
+    text-align: center;
+}
+mat-form-field {
+    width: 100%;
+    border-radius: 5% !important;
+  }

@@ -1,0 +1,51 @@
+<h1 >Admissions Form</h1>
+
+<br>
+  <div class="row">
+    <div class="col-10 col-md-6 col-lg-4 m-auto">
+     
+      <a routerLink=""><mat-icon>keyboard_backspace</mat-icon></a> <br><br>
+      <form [formGroup]="myFG"   > 
+        <mat-form-field  appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name" pattern="[a-zA-Z ]*" maxlength="20"
+             type="text" placeholder="Ex : Sathwiq"    required >
+            <mat-error  >Please enter a valid user name.</mat-error>
+          </mat-form-field>
+          <br>  
+          <mat-form-field  appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="lname" pattern="[a-zA-Z ]*" maxlength="20"
+             type="text" placeholder="Ex : Reddy"    required >
+            <mat-error  >Please enter a valid last name.</mat-error>
+          </mat-form-field>  
+          <br>   
+          <mat-form-field  appearance="outline">
+            <mat-label>Class</mat-label>
+            <input matInput formControlName="class" 
+             type="text" placeholder="Ex : 5A"    required >
+            <mat-error  >Please enter a valid class.</mat-error>
+          </mat-form-field>  
+          <br>
+          <mat-form-field  appearance="outline">
+            <mat-label>Year of passing</mat-label>
+            <input matInput  formControlName="year"  [min]="2017" 
+             type="number" placeholder="Ex : 2018"    required >
+            <mat-error  >Please enter a valid year.</mat-error>
+          </mat-form-field> 
+    <br>
+          <mat-form-field  appearance="outline">
+            <mat-label>Percentage</mat-label>
+            <input matInput formControlName="percentage" 
+             type="number" placeholder="Ex : 95"    required >
+            <mat-error  >Please enter a valid percentage.</mat-error>
+          </mat-form-field> 
+    
+        <br>
+        <button mat-raised-button  color="primary" type="submit"  
+        (click) = "submit()" [disabled]="!myFG.valid"
+        >Submit</button>
+      </form>
+    </div>
+  </div>
+  
